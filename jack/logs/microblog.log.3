@@ -1,103 +1,95 @@
-2025-07-15 10:05:09,451 ERROR: Exception on /index [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
+2025-07-17 08:44:08,662 INFO: Microblog startup [in /home/jack-gulling/PycharmProjects/Jack.com/jack/app/__init__.py:54]
+2025-07-17 08:44:21,443 ERROR: Exception on / [GET] [in /home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py:875]
 Traceback (most recent call last):
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
     rv = self.dispatch_request()
          ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/routes.py", line 22, in index
-    return render_template('index.html', title='Home Page', form=form, posts=posts)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/templating.py", line 150, in render_template
+  File "/home/jack-gulling/PycharmProjects/Jack.com/jack/app/routes.py", line 35, in index
+    return render_template('index.html', title='Home Page', form=form,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
     return _render(app, template, context)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/templating.py", line 131, in _render
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
     rv = template.render(context)
          ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
     self.environment.handle_exception()
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/nathanbellew/Documents/jack/app/templates/base.html", line 24, in top-level template code
-    {% block content %}{% endblock %}
+  File "/home/jack-gulling/PycharmProjects/Jack.com/jack/app/templates/index.html", line 2, in top-level template code
+    {% import "bootstrap_wtf.html" as wtf%}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 20, in block 'content'
-    <p> {% include '_post.html' %}</p>
+  File "/home/jack-gulling/PycharmProjects/Jack.com/jack/app/templates/base.html", line 69, in top-level template code
+    '<img src="{{ url_for('statoc', filename='loading.gif') }}">';
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/templates/_post.html", line 3, in top-level template code
-    <td><img src="{{ user.avatar(32) }}"></td>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2025-07-15 10:05:21,743 ERROR: Exception on /explore [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'statoc' with values ['filename']. Did you mean 'static' instead?
+2025-07-17 08:55:48,306 INFO: Microblog startup [in /home/jack-gulling/PycharmProjects/Jack.com/jack/app/__init__.py:54]
+2025-07-17 08:56:20,010 ERROR: Exception on /favicon.ico [GET] [in /home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py:875]
 Traceback (most recent call last):
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/routes.py", line 147, in explore
-    return render_template('index.html', title = 'Explore', posts=posts)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/templating.py", line 150, in render_template
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jack-gulling/PycharmProjects/Jack.com/jack/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/templating.py", line 150, in render_template
     return _render(app, template, context)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/templating.py", line 131, in _render
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/flask/templating.py", line 131, in _render
     rv = template.render(context)
          ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/jinja2/environment.py", line 1295, in render
     self.environment.handle_exception()
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+  File "/home/jack-gulling/Documents/Jack.com/jack/venv/lib/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 1, in top-level template code
+  File "/home/jack-gulling/PycharmProjects/Jack.com/jack/app/templates/404.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/home/nathanbellew/Documents/jack/app/templates/base.html", line 24, in top-level template code
-    {% block content %}{% endblock %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 20, in block 'content'
-    <p> {% include '_post.html' %}</p>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/templates/_post.html", line 3, in top-level template code
-    <td><img src="{{ user.avatar(32) }}"></td>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
-    return getattr(obj, attribute)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2025-07-15 10:12:34,294 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 10:19:32,542 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 11:02:43,017 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 11:03:15,448 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 11:03:32,628 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 11:03:44,290 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 11:12:34,514 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 11:13:04,169 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 13:21:50,400 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
-2025-07-15 13:22:31,970 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
-2025-07-15 13:33:33,447 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
-2025-07-15 13:59:21,067 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
-2025-07-15 14:12:07,677 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
+jinja2.exceptions.TemplateRuntimeError: extended multiple times

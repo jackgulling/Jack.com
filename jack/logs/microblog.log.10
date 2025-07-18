@@ -1,4 +1,4 @@
-2025-07-15 14:13:27,494 ERROR: Exception on / [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
+2025-07-15 08:53:32,874 ERROR: Exception on /user/JDG3 [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,9 +15,9 @@ Traceback (most recent call last):
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/routes.py", line 29, in index
-    return render_template('index.html', title='Home Page', form=form,
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nathanbellew/Documents/jack/app/routes.py", line 81, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/templating.py", line 149, in render_template
     template = app.jinja_env.get_or_select_template(template_name_or_list)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -37,11 +37,11 @@ Traceback (most recent call last):
     self.handle_exception(source=source_hint)
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 2, in template
-    {% import "bootstrap_wtf.html" %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.TemplateSyntaxError: expected token 'as', got 'end of statement block'
-2025-07-15 14:13:32,646 ERROR: Exception on / [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
+  File "/home/nathanbellew/Documents/jack/app/templates/user.html", line 39, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'endif'. The innermost block that needs to be closed is 'if'.
+2025-07-15 08:54:58,366 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
+2025-07-15 08:55:04,082 ERROR: Exception on /user/JDG3 [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -58,9 +58,9 @@ Traceback (most recent call last):
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/routes.py", line 29, in index
-    return render_template('index.html', title='Home Page', form=form,
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nathanbellew/Documents/jack/app/routes.py", line 81, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/templating.py", line 149, in render_template
     template = app.jinja_env.get_or_select_template(template_name_or_list)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -80,14 +80,7 @@ Traceback (most recent call last):
     self.handle_exception(source=source_hint)
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 2, in template
-    {% import "bootstrap_wtf.html" %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.TemplateSyntaxError: expected token 'as', got 'end of statement block'
-2025-07-15 14:17:12,119 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
-2025-07-15 14:19:41,284 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
-2025-07-15 14:40:17,289 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:48]
-2025-07-15 15:54:24,757 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:54]
-2025-07-16 08:54:56,166 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:54]
-2025-07-16 08:55:16,597 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:54]
-2025-07-16 09:10:13,801 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:54]
+  File "/home/nathanbellew/Documents/jack/app/templates/user.html", line 40, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2025-07-15 08:56:50,108 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]

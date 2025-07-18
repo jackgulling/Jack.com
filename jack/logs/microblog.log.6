@@ -1,4 +1,4 @@
-2025-07-15 08:56:52,072 ERROR: Exception on /user/JDG3 [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
+2025-07-15 10:05:09,451 ERROR: Exception on /index [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,56 +15,9 @@ Traceback (most recent call last):
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/routes.py", line 81, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/templating.py", line 149, in render_template
-    template = app.jinja_env.get_or_select_template(template_name_or_list)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1016, in get_template
-    return self._load_template(name, globals)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 975, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/loaders.py", line 138, in load
-    code = environment.compile(source, name, filename)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 771, in compile
-    self.handle_exception(source=source_hint)
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/nathanbellew/Documents/jack/app/templates/user.html", line 38, in template
-    {% endblock %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'endif'. The innermost block that needs to be closed is 'if'.
-2025-07-15 08:58:24,858 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 09:00:15,151 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 09:01:10,421 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 09:19:27,439 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 09:19:59,329 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 09:20:05,068 ERROR: Exception on /index [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
-Traceback (most recent call last):
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/routes.py", line 25, in index
-    return render_template('index.html', title='Home', posts=posts)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nathanbellew/Documents/jack/app/routes.py", line 22, in index
+    return render_template('index.html', title='Home Page', form=form, posts=posts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/templating.py", line 150, in render_template
     return _render(app, template, context)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -77,17 +30,20 @@ Traceback (most recent call last):
     raise rewrite_traceback_stack(source=source)
   File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/home/nathanbellew/Documents/jack/app/templates/base.html", line 23, in top-level template code
+  File "/home/nathanbellew/Documents/jack/app/templates/base.html", line 24, in top-level template code
     {% block content %}{% endblock %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 6, in block 'content'
-    {{ form.hidden_tag() }}
+  File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 20, in block 'content'
+    <p> {% include '_post.html' %}</p>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nathanbellew/Documents/jack/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ user.avatar(32) }}"></td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
     return getattr(obj, attribute)
            ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2025-07-15 09:20:44,763 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
-2025-07-15 09:20:45,824 ERROR: Exception on /index [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2025-07-15 10:05:21,743 ERROR: Exception on /explore [GET] [in /home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py:875]
 Traceback (most recent call last):
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -104,9 +60,9 @@ Traceback (most recent call last):
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/routes.py", line 25, in index
-    return render_template('index.html', title='Home', posts=posts)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nathanbellew/Documents/jack/app/routes.py", line 147, in explore
+    return render_template('index.html', title = 'Explore', posts=posts)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/flask/templating.py", line 150, in render_template
     return _render(app, template, context)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -119,13 +75,29 @@ Traceback (most recent call last):
     raise rewrite_traceback_stack(source=source)
   File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/home/nathanbellew/Documents/jack/app/templates/base.html", line 23, in top-level template code
+  File "/home/nathanbellew/Documents/jack/app/templates/base.html", line 24, in top-level template code
     {% block content %}{% endblock %}
     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 6, in block 'content'
-    {{ form.hidden_tag() }}
+  File "/home/nathanbellew/Documents/jack/app/templates/index.html", line 20, in block 'content'
+    <p> {% include '_post.html' %}</p>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nathanbellew/Documents/jack/app/templates/_post.html", line 3, in top-level template code
+    <td><img src="{{ user.avatar(32) }}"></td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/nathanbellew/Documents/jack/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
     return getattr(obj, attribute)
            ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2025-07-15 09:26:02,209 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2025-07-15 10:12:34,294 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
+2025-07-15 10:19:32,542 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
+2025-07-15 11:02:43,017 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
+2025-07-15 11:03:15,448 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
+2025-07-15 11:03:32,628 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
+2025-07-15 11:03:44,290 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
+2025-07-15 11:12:34,514 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
+2025-07-15 11:13:04,169 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:44]
+2025-07-15 13:21:50,400 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
+2025-07-15 13:22:31,970 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
+2025-07-15 13:33:33,447 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
+2025-07-15 13:59:21,067 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
+2025-07-15 14:12:07,677 INFO: Microblog startup [in /home/nathanbellew/Documents/jack/app/__init__.py:46]
