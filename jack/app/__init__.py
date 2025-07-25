@@ -10,6 +10,8 @@ from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
 from config import Config
 
+from app import models
+from app.models import User, Post, Message, Notification
 
 def get_locale():
     return request.accept_languages.best_match(current_app.config['LANGUAGES'])
@@ -80,5 +82,7 @@ def create_app(config_class=Config):
 
     return app
 
-
-from app import models
+@app.shell_context_processor
+def make_shell_context():
+    return {'sa' : sa, 'so' : so, 'db' : db, 'User' : User, 'Post' : Post,
+            'Message' : Message, 'Notification' : Notification}
