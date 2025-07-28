@@ -178,7 +178,7 @@ def send_message(recipient):
 @bp.route('/messages')
 @login_required
 def messages():
-    current_user.last_message_read_time = datetome.now(timezone.utc)
+    current_user.last_message_read_time = datetime.now(timezone.utc)
     current_user.add_notification('unread_message_count', 0)
     db.session.commit()
     page = request.args.get('page', 1, type=int)
@@ -194,3 +194,14 @@ def messages():
                            next_url=next_url, prev_url=prev_url)
 
 @bp.route('/notifications')
+@login_required
+def notifications():
+    since = request.args.get('since', 0.0, type=float)
+    query = current_user.notifications.select().where(
+        Notification.timestamp > since).order_by(Notification.timestamp.asc())
+    notifications = db.session.scalars(query)
+    return [{
+        'name': n.name,
+        'data': n.get_data(),
+        'timestamp': n.timestamp
+    } for n in notifications]
